@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Zadej URL</title>
+    <link rel="stylesheet" href="/static/zadejURL.css">
+</head>
+<body>
+    <h1>Zadej URL pro vytvoření QR kódu</h1>
+    <div class="p">
+        <p>prosím o zadání celé URL adresy např. http://něconěco.cz/něconěco</p>
+    </div>
+    <form method="POST" action="/">
+        {{ form.hidden_tag() }}
+        <br>
+        <div class="inputbox">
+            {{ form.url(size=64) }}
+        </div>
+        <br>
+        <br>
+        {{ form.submit() }}
+    </form>
+</body>
+</html>
