@@ -1,0 +1,19 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QR kód</title>
+    <link rel="stylesheet" href="/static/index.css">
+</head>
+<body>
+    <h1>Váš QR kód</h1>
+    {% if finalURL %}
+        <p>Zde je QR kód vytvořený z této URL: {{ finalURL }}</p>
+        <img src="data:image/png;base64,{{ qr_code_img }}" alt="QR Code">
+    {% else %}
+        <p>Žádná URL nebyla zadana</p>
+    {% endif %}
+    <br>
+    <a href="{{ url_for('zadejurl') }}">Zpět</a>
+</body>
+</html>
